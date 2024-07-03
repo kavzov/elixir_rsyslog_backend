@@ -177,7 +177,7 @@ defmodule Logger.Backends.Rsyslog do
   defp get_cache(app_name) do
     {:ok, hostname} = :inet.gethostname()
     proc = :os.getpid() |> List.to_string()
-    <<"Z ", List.to_string(hostname)::binary, " ", app_name::binary, " ", proc::binary, " - - ">>
+    <<"Z ", List.to_string(hostname)::binary, " ", app_name::binary, " ", proc::binary, " - ">>
   end
 
   defp pad2(int) when int < 10, do: [?0, int + 48]
